@@ -1,15 +1,15 @@
 var gulp = require('gulp'),
-    minifycss = require('gulp-minify-css'),
+    cleancss = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
     uglify = require('gulp-uglify'),
     usemin = require('gulp-usemin'),
     imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
+    //rename = require('gulp-rename'),
+    //concat = require('gulp-concat'),
+    //changed = require('gulp-changed'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    changed = require('gulp-changed'),
     rev = require('gulp-rev'),
     browserSync = require('browser-sync'),
     ngannotate = require('gulp-ng-annotate'),
@@ -34,7 +34,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('usemin',['jshint'], function () {
   return gulp.src('./app/menu.html')
       .pipe(usemin({
-        css:[minifycss(),rev()],
+        css:[cleancss(),rev()],
         js: [ngannotate(),uglify(),rev()]
       }))
       .pipe(gulp.dest('dist/'));
@@ -48,6 +48,7 @@ gulp.task('imagemin', function() {
     .pipe(notify({ message: 'Images task complete' }));
 });
 
+// Coyp Fonts
 gulp.task('copyfonts', ['clean'], function() {
    gulp.src('./bower_components/font-awesome/fonts/**/*.{ttf,woff,eof,svg}*')
    .pipe(gulp.dest('./dist/fonts'));
