@@ -170,8 +170,6 @@ angular.module('confusionApp', [])
                 $scope.commentForm.$setPristine();
                 
                 $scope.comment = newComment();
-                
-                console.log(JSON.stringify($scope.dish.comments))
             }
         }])
 ;

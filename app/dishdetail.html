@@ -72,8 +72,8 @@
                         <label for="name" class="col-xs-2 control-label">Your Name</label>
                         <div class="col-xs-10">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" ng-model="comment.name" required>
+                            <span ng-show="hasError(commentForm.name)" class="help-block">Your name is required.</span>
                         </div>
-                        <span ng-show="hasError(commentForm.name)" class="help-block">Your name is required.</span>
                     </div>
                     <div class="form-group">
                         <div class="radio col-sx-10">
@@ -101,8 +101,8 @@
                         <label for="description" class="col-xs-2  control-label">Your Comment</label>
                         <div class="col-xs-10">
                             <textarea class="form-control" id="description" name="description" ng-model="comment.description" rows="10" required></textarea>
+                            <span ng-show="hasError(commentForm.description)" class="help-block">Your comment is required.</span>
                         </div>
-                        <span ng-show="hasError(commentForm.description)" class="help-block">Your comment is required.</span>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-10 col-xs-offset-2">
