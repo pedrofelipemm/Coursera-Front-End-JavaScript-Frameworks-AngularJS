@@ -4,3 +4,5 @@ test/
 tests/
 .tmp/
 dist/
+.project
+.tern-project
