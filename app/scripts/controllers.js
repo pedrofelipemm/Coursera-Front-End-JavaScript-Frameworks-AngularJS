@@ -12,14 +12,11 @@ angular.module('confusionApp')
                 $scope.tab = setTab;
                 if (setTab === 2) {
                     $scope.filtText = "appetizer";
-                }
-                else if (setTab === 3) {
+                } else if (setTab === 3) {
                     $scope.filtText = "mains";
-                }
-                else if (setTab === 4) {
+                } else if (setTab === 4) {
                     $scope.filtText = "dessert";
-                }
-                else {
+                } else {
                     $scope.filtText = "";
                 }
             };
@@ -57,9 +54,8 @@ angular.module('confusionApp')
         }])
         
         .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
-            var dish= menuFactory.getDish(parseInt($stateParams.id,10));
-                        $scope.dish = dish;
-                    }])
+            $scope.dish = menuFactory.getDish(parseInt($stateParams.id,10));
+        }])
         
         .controller('DishCommentController', ['$scope', function($scope) {
             
@@ -92,4 +88,17 @@ angular.module('confusionApp')
                 $scope.comment = newComment();
             }
         }])
-;
+        
+        .controller('IndexController', ['$scope', 'corporateFactory', 'menuFactory', function($scope, corporateFactory, menuFactory) {
+        	
+        	$scope.featuredDish = menuFactory.getDish(0);
+        	$scope.featuredPromotion = menuFactory.getPromotion(0);
+        	$scope.chef = corporateFactory.getLeader(3);
+        	
+        }])
+        
+        .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory) {
+        	
+        	$scope.leaders = corporateFactory.getLeaders();
+        	
+        }]);
