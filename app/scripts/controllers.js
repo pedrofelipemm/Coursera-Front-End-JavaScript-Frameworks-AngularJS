@@ -12,7 +12,7 @@ angular.module('confusionApp')
             	$scope.dishes = response;
                 $scope.showMenu = true;
             }, function(response) {
-            	$scope.message = "Error: "+response.status + " " + response.statusText;
+            	$scope.message = "Error: " + response.status + " " + response.statusText;
             });
             
             $scope.select = function(setTab) {
@@ -69,7 +69,7 @@ angular.module('confusionApp')
             			$scope.dish = response;
             			$scope.showDish = true;
             		}, function(response) {
-            			$scope.message = "Error: "+response.status + " " + response.statusText;
+            			$scope.message = "Error: " + response.status + " " + response.statusText;
             		});
             
         }])
@@ -116,7 +116,7 @@ angular.module('confusionApp')
         		$scope.featuredDish = response;
                 $scope.showFeaturedDish = true;
             }, function(response) {
-            	$scope.message = "Error: "+response.status + " " + response.statusText;
+            	$scope.message = "Error: " + response.status + " " + response.statusText;
             });
         	
         	$scope.featuredPromotion = menuFactory.getPromotion(0);
