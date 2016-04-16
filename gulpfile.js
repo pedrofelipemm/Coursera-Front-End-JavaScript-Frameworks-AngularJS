@@ -23,7 +23,7 @@ gulp.task('jshint', function() {
 
 // Clean
 gulp.task('clean', function() {
-    return del(['dist']);
+    return del(['dist', 'server/public/*']);
 });
 
 // Default task
