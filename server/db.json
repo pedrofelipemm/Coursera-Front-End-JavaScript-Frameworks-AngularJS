@@ -169,11 +169,27 @@
           "date": "2011-12-02T17:57:28.556094Z"
         }
       ]
+    },
+    {
+      "id": 4,
+      "name": "Weekend Grand Buffet",
+      "image": "images/buffet.png",
+      "label": "New",
+      "price": 19.99,
+      "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person ",
+      "comments": [
+        {
+          "author": "Pedro Felipe Marques Moreira",
+          "rating": 5,
+          "comment": "Awesome!",
+          "date": "2016-04-17T13:28:28.881Z"
+        }
+      ]
     }
   ],
   "promotions": [
     {
-      "id": 0,
+      "id": 4,
       "name": "Weekend Grand Buffet",
       "image": "images/buffet.png",
       "label": "New",
@@ -215,5 +231,32 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "mychannel": "Email",
+      "firstName": "Pedro Felipe",
+      "lastName": "Marques Moreira",
+      "agree": true,
+      "email": "pedro@gmail.com",
+      "tel": {
+        "areaCode": "19",
+        "number": "993400759"
+      },
+      "comments": "Awesome!",
+      "id": 1
+    },
+    {
+      "mychannel": "Email",
+      "firstName": "Filho",
+      "lastName": "da Puta",
+      "agree": true,
+      "email": "fdp@gmail.com",
+      "tel": {
+        "areaCode": "19",
+        "number": "3294231943727"
+      },
+      "comments": "People = Shit!",
+      "id": 2
+    }
+  ]
 }

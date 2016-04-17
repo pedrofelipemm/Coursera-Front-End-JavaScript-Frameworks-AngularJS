@@ -1,18 +1,18 @@
 <div class="container">
-    <div class="row row-content" ng-controller="DishDetailController">
-    <div class="col-xs-12" ng-if="!showDish">
+    <div class="row row-content" data-ng-controller="DishDetailController">
+    <div class="col-xs-12" data-ng-if="!showDish">
            <h3>{{message}}</h3>
        </div>
-       <div class="col-xs-12" ng-if="showDish">
+       <div class="col-xs-12" data-ng-if="showDish">
         <div class="col-xs-12">
-        	<button class="btn btn-xs btn-primary pull-right" type="button" ui-sref="app.menu">
+        	<button class="btn btn-xs btn-primary pull-right" type="button" data-ui-sref="app.menu">
 				Back to Menu
             </button>
             <ul class="media-list">
                 <li class="media">
                     <div class="media-left media-middle">
                         <a href="#">
-                            <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
+                            <img class="media-object img-thumbnail" data-ng-src={{dish.image}} alt="Uthappizza">
                         </a>
                     </div>
                     <div class="media-body">
@@ -30,29 +30,29 @@
                 <div class="form-group">
                     <h3 style="display: inline-block; padding-right: 20px;">Customer Comments</h3>
                     <label for="sortby" >Sort by: </label>
-                    <input name="sortby" id="sortby" type="text" class="form-control" placeholder="author, date or rating"  ng-model="order">
+                    <input name="sortby" id="sortby" type="text" class="form-control" placeholder="author, date or rating"  data-ng-model="order">
                 </div>
             </form>                
         </div>
         <div class="col-xs-9 col-xs-offset-1">
-            <blockquote ng-repeat="comment in dish.comments| orderBy: order">
+            <blockquote data-ng-repeat="comment in dish.comments| orderBy: order">
                 <p>{{comment.rating}} Stars</p>
                 <p>{{comment.comment}}</p>
                 <footer>{{comment.author}}, {{comment.date | date:'MMM. dd, yyyy'}}</footer>
             </blockquote>
         </div>
-        <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
-            <blockquote ng-show="isFormValid(commentForm)">
+        <div class="col-xs-9 col-xs-offset-1" data-ng-controller="DishCommentController">
+            <blockquote data-ng-show="isFormValid(commentForm)">
                 <p>{{comment.rating}} Stars</p>
                 <p>{{comment.description}}</p>
                 <footer>{{comment.name}}, {{comment.date | date:'MMM. dd, yyyy'}}</footer>
             </blockquote>
-            <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" novalidate>
-                <div class="form-group" ng-class="{'has-error': hasError(commentForm.name)}">
+            <form class="form-horizontal" name="commentForm" data-ng-submit="submitComment()" novalidate>
+                <div class="form-group" data-ng-class="{'has-error': hasError(commentForm.name)}">
                     <label for="name" class="col-xs-2 control-label">Your Name</label>
                     <div class="col-xs-10">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" ng-model="comment.name" required>
-                        <span ng-show="hasError(commentForm.name)" class="help-block">Your name is required.</span>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" data-ng-model="comment.name" required>
+                        <span data-ng-show="hasError(commentForm.name)" class="help-block">Your name is required.</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -60,33 +60,33 @@
                         <label for="rating" class="col-sx-2 control-label"><strong>Number of Stars</strong></label>
                         <div class="radio-inline">
                             <label class="radio-inline">
-                                <input type="radio" name="rating" ng-model="comment.rating" value="1">1
+                                <input type="radio" name="rating" data-ng-model="comment.rating" value="1">1
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="rating" ng-model="comment.rating" value="2">2
+                                <input type="radio" name="rating" data-ng-model="comment.rating" value="2">2
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="rating" ng-model="comment.rating" value="3">3
+                                <input type="radio" name="rating" data-ng-model="comment.rating" value="3">3
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="rating" ng-model="comment.rating" value="4">4
+                                <input type="radio" name="rating" data-ng-model="comment.rating" value="4">4
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="rating" ng-model="comment.rating" value="5">5
+                                <input type="radio" name="rating" data-ng-model="comment.rating" value="5">5
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="form-group" ng-class="{'has-error': hasError(commentForm.description)}">
+                <div class="form-group" data-ng-class="{'has-error': hasError(commentForm.description)}">
                     <label for="description" class="col-xs-2  control-label">Your Comment</label>
                     <div class="col-xs-10">
-                        <textarea class="form-control" id="description" name="description" ng-model="comment.description" rows="10" required></textarea>
-                        <span ng-show="hasError(commentForm.description)" class="help-block">Your comment is required.</span>
+                        <textarea class="form-control" id="description" name="description" data-ng-model="comment.description" rows="10" required></textarea>
+                        <span data-ng-show="hasError(commentForm.description)" class="help-block">Your comment is required.</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-xs-10 col-xs-offset-2">
-                        <button type="submit" class="btn btn-primary" ng-disabled="!isFormValid(commentForm)">Submit Comment</button>
+                        <button type="submit" class="btn btn-primary" data-ng-disabled="!isFormValid(commentForm)">Submit Comment</button>
                     </div>
                 </div>
             </form>

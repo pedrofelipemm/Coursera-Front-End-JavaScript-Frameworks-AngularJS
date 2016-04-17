@@ -1,4 +1,4 @@
-<div class="container" ng-controller="AboutController">
+<div class="container" data-ng-controller="AboutController">
     <div class="row">
         <div class="col-xs-12">
            <ul class="breadcrumb">
@@ -50,12 +50,15 @@
 
 	<div class="row row-content">
     	<div class="col-xs-12 col-sm-9">
+    		<div data-ng-if="!showLeaders">
+                <h3>{{leadersMessage}}</h3>
+            </div>
         	<h2>Corporate Leadership</h2>
-           	<ul class="media-list">
-				<li class="media" ng-repeat="leader in leaders">
+           	<ul class="media-list" data-ng-if="showLeaders">
+				<li class="media" data-ng-repeat="leader in leaders">
                 	<div class="media-left media-middle">
                  		<a>
-                 			<img class="media-object img-thumbnail" ng-src={{leader.image}} alt="Uthappizza">
+                 			<img class="media-object img-thumbnail" data-ng-src={{leader.image}} alt="Uthappizza">
                  		</a>
              		</div>
                 	<div class="media-body">
